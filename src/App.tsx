@@ -96,12 +96,22 @@ const bankTwo = [{
   url: './sounds/wiff.mp3'
 }];
 
+interface Sound {
+  keyCode: number,
+  keyTrigger: string,
+  id: string,
+  url: string,
+}
+
+
+
+
 
 
 const App: React.FC = () => {
   const [power, setPower] = useState<boolean>(true)
   const [display, setDisplay] = useState<string>(String.fromCharCode(160))
-  const [currentPadBank, setCurrentPadBank] = useState<Array<Object>>(bankOne)
+  const [currentPadBank, setCurrentPadBank] = useState<Array<Sound>>(bankOne)
   const [currentPadBankId, setCurrentPadBankId] = useState<string>('Toon1 Sounds')
   const [sliderVal, setSliderVal] = useState<number>(0.3)
 
